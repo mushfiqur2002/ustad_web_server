@@ -1,6 +1,7 @@
+require('dotenv').config();
 export async function fetchMembers() {
     try {
-        const response = await fetch('/members');
+        const response = await fetch(process.env.FECTH_URL);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
